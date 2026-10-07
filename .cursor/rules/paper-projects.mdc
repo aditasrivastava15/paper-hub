@@ -1,0 +1,12 @@
+---
+description: Keep each research paper in its own project under papers/
+alwaysApply: true
+---
+
+This repository is the home for research-paper reading. The `papers/` directory is the only place those projects go.
+
+- Create each paper as its own directory: `papers/<slug>/`.
+- Keep notes, questions, and the summary for that paper inside its directory.
+- Add a paper with `python3 tools/paper.py new "Title" --url "https://..." --website "the site"`.
+- After the source link or title changes in `paper.json`, run `python3 tools/paper.py index`.
+- Record the link and write the student's own notes. Leave the paper's full text on the source site.

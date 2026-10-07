@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "Paper readings",
+      "path": "."
+    },
+    {
+      "name": "Reading on paper week",
+      "path": "papers/reading-on-paper-week"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.git": true
+    }
+  }
+}
