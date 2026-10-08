@@ -5,8 +5,8 @@
       "path": "."
     },
     {
-      "name": "Reading on paper week",
-      "path": "papers/reading-on-paper-week"
+      "name": "Neural Machine Translation by Jointly Learning to Align and Translate",
+      "path": "papers/bahdanau-align-and-translate"
     }
   ],
   "settings": {

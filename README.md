@@ -2,7 +2,7 @@
 
 This project is the single place for research papers you study from the site you use. Each paper is its own project, and every one of those projects lives in [`papers/`](papers/).
 
-The first project is [Reading on paper week](papers/reading-on-paper-week/README.md). That reading already happened in the Cursor project of the same name. The notes from that chat are not stored here, so this folder is the copy you keep. When you have the paper's link, put it in that project's `paper.json`, then run the index command below.
+The first project is [Neural Machine Translation by Jointly Learning to Align and Translate](papers/bahdanau-align-and-translate/README.md). That reading came from the Cursor project “reading on paper a week.” The summary, notes, formulas, and quiz from that chat are in its folder.
 
 ## Add the next paper
 

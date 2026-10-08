@@ -1,0 +1,13 @@
+{
+  "slug": "bahdanau-align-and-translate",
+  "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+  "authors": "Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio",
+  "venue": "ICLR 2015",
+  "status": "read",
+  "sourceUrl": "https://arxiv.org/abs/1409.0473",
+  "website": "arXiv",
+  "pdfName": "NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE.pdf",
+  "created": "2026-10-07",
+  "agentUrl": "https://cursor.com/agents/bc-2cae5311-fe10-4d75-9ae2-42b1a15c6fb0",
+  "origin": "Imported from the Cursor project \"reading on paper a week\" at https://cursor.com/agents/bc-2cae5311-fe10-4d75-9ae2-42b1a15c6fb0."
+}
