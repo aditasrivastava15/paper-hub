@@ -11,7 +11,7 @@ The full paper stays on the site where I read it. These files are my notes.
 
 ## Papers
 
-### Neural Machine Translation by Jointly Learning to Align and Translate
+### 1. Neural Machine Translation by Jointly Learning to Align and Translate
 
 Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. ICLR 2015.
 
