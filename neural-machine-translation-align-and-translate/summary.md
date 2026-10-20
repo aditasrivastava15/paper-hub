@@ -1,10 +1,30 @@
 # Summary
 
-A point-by-point account of **Neural Machine Translation by Jointly Learning to Align and Translate**, in study language.
+The picture and the walkthrough are in the [notes](notes.md). The paper is [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473).
+
+Picture a small piece of paper. It can hold only a few words, and it is the same size every time. An old translation program had to copy a whole English sentence onto that paper. Then it wrote the French. It was not allowed to look at the English again. It could use only the words on the paper.
+
+“The cat sat” is short, so every word fits. A long sentence has many names and details. The paper is still the same small size, so some English words are left off. Those missing words never appear in the French.
+
+This paper gives the program one piece of paper for each English word. When the program is about to write one French word, it can look back and read the English words it needs. Looking back like that is called attention.
+
+```mermaid
+flowchart LR
+  subgraph oldWay [Old way]
+    English[English sentence] --> Note[One note for the whole sentence]
+    Note --> French[French written from memory]
+  end
+  subgraph thisPaper [This paper]
+    Words[A note beside each English word] --> Look[Look at the notes that matter now]
+    Look --> Next[Next French word]
+  end
+```
+
+What follows is a point-by-point account of [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473), by Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio (ICLR 2015).
 
 ## What the paper is about
 
-- The goal is one neural net that reads English and writes French, rather than a factory of separately tuned statistical machine translation parts.
+- One neural net reads English and writes French.
 - Older neural translators (encoder–decoder) read the whole English sentence, squash it into one fixed-size vector, then write French from that vector.
 - That one vector is a bottleneck. Long sentences do not fit, so quality drops as length grows.
 - The fix: keep a note next to each English word. When writing the next French word, look back at the notes that matter right now.
@@ -19,7 +39,7 @@ A point-by-point account of **Neural Machine Translation by Jointly Learning to 
 
 - Each French word \(i\) gets its own context \(c_i\), not one shared \(c\).
 - \(c_i\) is a mix of source notes: \(c_i = \sum_j \alpha_{ij} h_j\).
-- \(\alpha_{ij}\) means “how much should I look at English word \(j\) while writing French word \(i\)?” A small scoring net produces a score, then softmax makes the weights positive and adding to 1.
+- \(\alpha_{ij}\) means “how much should I look at English word \(j\) while writing French word \(i\)?” A small scoring net produces a score, then softmax makes the weights positive and adds them up to 1.
 - That is soft alignment: the model can look at several words at once.
 - Alignment is not a separate preprocessing step. The same “was this a good translation?” objective trains the peeking together with reading and writing.
 

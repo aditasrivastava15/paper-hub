@@ -1,31 +1,30 @@
-# Paper readings
+# Paper hub
 
-This project is the single place for research papers you study from the site you use. Each paper is its own project, and every one of those projects lives in [`papers/`](papers/).
+I read research papers and write down what I understood, in plain language. This repo keeps those notes so I can come back to a paper later without starting from zero.
 
-The first project is [Neural Machine Translation by Jointly Learning to Align and Translate](papers/bahdanau-align-and-translate/README.md). That reading came from the Cursor project “reading on paper a week.” The summary, notes, formulas, and quiz from that chat are in its folder.
+Each paper has its own folder.
 
-## Add the next paper
+- `summary.md` retells the paper, one point at a time.
+- `notes.md` is the picture I use when I explain the paper.
 
-From the root of this project:
+The full paper stays on the site where I read it. These files are my notes.
 
-```bash
-python3 tools/paper.py new "The paper title" --url "https://..." --website "the site"
-```
+## Papers
 
-That creates `papers/<slug>/` with its own notes, questions, and summary. It also refreshes [PAPERS.md](PAPERS.md) and [paper-readings.code-workspace](paper-readings.code-workspace).
+### Neural Machine Translation by Jointly Learning to Align and Translate
 
-Other commands:
+Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. ICLR 2015.
 
-```bash
-python3 tools/paper.py list
-python3 tools/paper.py check
-python3 tools/paper.py index
-```
+The paper: https://arxiv.org/abs/1409.0473
 
-`check` confirms that `papers/` still contains only paper projects. `index` rebuilds the catalog after you edit a title, link, or status in `paper.json`. Status is `unread`, `reading`, or `read`.
+- [Summary](neural-machine-translation-align-and-translate/summary.md)
+- [Notes](neural-machine-translation-align-and-translate/notes.md)
 
-## Open the papers as separate projects
+### Sequence to Sequence Learning with Neural Networks
 
-Open `paper-readings.code-workspace`. The sidebar lists this home project and each paper as its own folder. They stay inside `papers/` rather than scattering into other coursework.
+Ilya Sutskever, Oriol Vinyals, and Quoc V. Le. NIPS 2014.
 
-Write your own notes in each paper folder. Leave the full paper on the source site.
+The paper: https://arxiv.org/abs/1409.3215
+
+- [Summary](sequence-to-sequence-learning-with-neural-networks/summary.md)
+- [Notes](sequence-to-sequence-learning-with-neural-networks/notes.md)

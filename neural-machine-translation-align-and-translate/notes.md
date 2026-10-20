@@ -1,10 +1,14 @@
 # Notes
 
-These notes are only for **Neural Machine Translation by Jointly Learning to Align and Translate**.
+The point-by-point account is in the [summary](summary.md). The paper is [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473).
+
+Read a long English sentence one time. Close the page. Write it in French without looking back. You still remember the ending. You forget the middle. You mix up the names. Old translation programs had to work this way. They could not look at the English again. These notes are about the paper that lets them look back.
+
+The paper is [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473).
 
 ## The one idea that matters
 
-Older neural machine translation squashes a whole source sentence into one fixed-length vector. That bottleneck fails on long sentences. This paper lets the decoder look at a different mix of source words for each target word. That look is attention, also called soft alignment, and it is trained together with translation.
+Old translators had to carry the whole English sentence in one breath. A short sentence survived. A long one spilled. This paper lets the writer glance back, and glance at a different part of the English for each French word. That glance is attention, also called soft alignment. The same lesson that teaches the model to translate also teaches it where to look.
 
 ## Picture box
 
@@ -13,7 +17,7 @@ Older neural machine translation squashes a whole source sentence into one fixed
 - **Two-way walker** = the bidirectional encoder (reads left-to-right and right-to-left)
 - **One team, one grade** = joint training (alignment and translation learn together)
 
-The story in one breath: old machines smash a whole English sentence onto one sticky note, then write French from that note. A long sentence does not fit, so details fall off. This paper keeps a row of notes, one near each English word, and lets the writer peek at the bits that matter for the next French word.
+Put the four pictures together. The sticky note was the whole sentence. The flashlight picks which notes matter for the French word being written now. The two-way walker writes each note so it knows the words on both sides. One team, one grade: looking and translating learn from the same score.
 
 ## Paper map
 
@@ -25,9 +29,18 @@ The story in one breath: old machines smash a whole English sentence onto one st
 6. **Results (WMT 2014 English→French).** RNNsearch-50 BLEU **26.75** versus the baseline **17.82** on all sentences. On sentences with only known words, **34.16**, near Moses at **35.63**. Quality holds on long sentences. The baseline collapses.
 7. **Open problem they name.** Unknown and rare words.
 
-## Section 5, the attention part
+## How attention works
 
 When the machine writes the next French word, it does not use one sticky note for the whole English sentence. It makes a fresh little note for this word, by peeking more at some English words and less at others.
+
+```mermaid
+flowchart TD
+  Read[Read each English word both ways] --> Leave[Leave a note beside that word]
+  Leave --> Score[Score every note for this French word]
+  Score --> Shares[Turn the scores into shares that add up to 1]
+  Shares --> Mix[Mix the notes into one fresh note]
+  Mix --> Write[Write the next French word]
+```
 
 1. The reader first makes a row of notes, one near each English word. Each note knows that word plus some of the words around it, because the two-way walker has gone left-to-right and right-to-left.
 2. Before writing French word \(i\), the writer looks at what it has already said (\(s_{i-1}\)) and scores every English note: “How useful are you right now?”
@@ -54,6 +67,14 @@ After that, people put neural nets inside the old translation factory in two com
 
 Bahdanau, Cho, and Bengio want the opposite: one network that reads the source and generates the translation.
 
+## Takeaways
+
+- The idea to explain to someone else: translation got better because the model learns where to look while it writes, instead of remembering the whole source in one vector.
+- The evidence: on WMT 2014 English→French, RNNsearch-50 scores **26.75** BLEU against the old model’s **17.82**. The old model falls apart as sentences get long. RNNsearch holds up.
+- What the paper still cannot do: unknown and rare words. On sentences with only known words it gets close to Moses (**34.16** vs **35.63**). With unknown words in the mix, it does not.
+
 ## What I still don't understand
 
--
+- Why the match \(a(s_{i-1}, h_j)\) needs a small scoring network, instead of a simpler comparison between the two vectors.
+- How beam search chooses among drafts once every French word has its own mix \(c_i\).
+- Why looking at the right English words still cannot name a rare word that was replaced by `[UNK]`.
