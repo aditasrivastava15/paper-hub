@@ -19,3 +19,12 @@ The paper: https://arxiv.org/abs/1409.0473
 
 - [Summary](neural-machine-translation-align-and-translate/summary.md)
 - [Notes](neural-machine-translation-align-and-translate/notes.md)
+
+### 2. Diffusion models
+
+Jascha Sohl-Dickstein, Eric A. Weiss, Niru Maheswaranathan, and Surya Ganguli, ICML 2015. Jonathan Ho, Ajay Jain, and Pieter Abbeel, NeurIPS 2020. Alex Nichol and Prafulla Dhariwal, 2021. Prafulla Dhariwal and Alex Nichol, 2021.
+
+The papers: https://arxiv.org/abs/1503.03585, https://arxiv.org/abs/2006.11239, https://arxiv.org/abs/2102.09672, https://arxiv.org/abs/2105.05233
+
+- [Summary](diffusion-models/summary.md)
+- [Notes](diffusion-models/notes.md)
