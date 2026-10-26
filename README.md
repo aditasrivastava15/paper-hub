@@ -28,3 +28,11 @@ The papers: https://arxiv.org/abs/1503.03585, https://arxiv.org/abs/1907.05600, 
 
 - [Summary](diffusion-models/summary.md)
 - [Notes](diffusion-models/notes.md)
+
+### 3. Recursive transformers
+
+Mostafa Dehghani, Stephan Gouws, Oriol Vinyals, Jakob Uszkoreit, and Łukasz Kaiser, 2018. Nikunj Saunshi, Nishanth Dikkala, Zhiyuan Li, Sanjiv Kumar, and Sashank J. Reddi, ICLR 2025. Jonas Geiping, Sean McLeish, Neel Jain, John Kirchenbauer, Siddharth Singh, Brian R. Bartoldson, Bhavya Kailkhura, Abhinav Bhatele, and Tom Goldstein, NeurIPS 2025.
+
+The papers: https://arxiv.org/abs/1807.03819, https://arxiv.org/abs/2502.17416, https://arxiv.org/abs/2502.05171
+
+- [Prelude](recursive-transformers/prelude.md)
