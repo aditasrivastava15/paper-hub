@@ -26,7 +26,8 @@ Ilya Sutskever, Oriol Vinyals, and Quoc V. Le. NIPS 2014.
 
 The paper: https://arxiv.org/abs/1409.3215
 
-- [Summary](sequence-to-sequence-learning-with-neural-networks/summary.md)
+The write-up is in the notes. The summary only points there.
+
 - [Notes](sequence-to-sequence-learning-with-neural-networks/notes.md)
 
 ### Recursive transformers
