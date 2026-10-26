@@ -36,3 +36,13 @@ Mostafa Dehghani, Stephan Gouws, Oriol Vinyals, Jakob Uszkoreit, and Łukasz Kai
 The papers: https://arxiv.org/abs/1807.03819, https://arxiv.org/abs/2502.17416, https://arxiv.org/abs/2502.05171
 
 - [Prelude](recursive-transformers/prelude.md)
+
+### 4. Sequence to Sequence Learning with Neural Networks
+
+Ilya Sutskever, Oriol Vinyals, and Quoc V. Le. NIPS 2014.
+
+The paper: https://arxiv.org/abs/1409.3215
+
+The write-up is in the notes. The summary only points there.
+
+- [Notes](sequence-to-sequence-learning-with-neural-networks/notes.md)
